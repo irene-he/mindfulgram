@@ -1,0 +1,35 @@
+/* Using CSS Attribute Selectors to select elements with a specified attribute and value*/
+
+/* Footer In Page View */
+[role="contentinfo"],
+/* Header In Mobile View */
+[class="_accy"],
+/* Search Panel */
+html[search-panel="false"] div[class="xopu45v xu3j5b3 xm81vs4 x1vjfegm"] > div[style="transform: translateX(0%);"],
+/* Home Page Posts */
+html[home-page-posts="false"] article[class],
+/* Home Page Other Content */
+html[home-page-posts="false"] article[class] + div,
+html[home-page-posts="false"] article[class] + div[class]
+/* Home Page Loading Spinner */
+html[home-page-posts="false"] svg[aria-label="Loading..."],
+/* Home Page Stories */
+html[home-page-stories="false"] [class="xmnaoh6"],
+html[home-page-stories="false"] [class="xmnaoh6 x1xmf6yo"],
+html[home-page-stories="false"] [class="x1ixjvfu x1q0q8m5 xso031l"],
+/* Explore */
+html[explore="false"] div[class="_ad3n"] + div,
+/* Explore Header (Title of Search) */
+html[explore="false"] [class="_ad3n"],
+/* Reels */
+html[reels="false"] [class="x78zum5 xedcshv"],
+/* Account Pages */
+html[account-pages="false"] [class="_aa_y _aa_z _aa_-"],
+/* More Posts */ 
+html[more-posts="false"] [class="_aa6g"] {
+    display: none !important;
+}
+/* Direct Inbox */
+html[messages="true"] [role="main"][aria-label~="Conversation"] {
+    display: flex !important
+}
