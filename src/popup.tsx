@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { render } from "react-dom";
 import { defaultSettings } from "./background";
 
+// Toggles to decide whether or not element is viewable
 const Popup = () => {
-    // Determines whether these elements are viewable or not:
     const [accountPages, setAccountPages] = useState<boolean>();
     const [homePagePosts, setHomePagePosts] = useState<boolean>();
     const [homePageStories, setHomePageStories] = useState<boolean>();
@@ -15,32 +15,21 @@ const Popup = () => {
         stateSetters: [setAccountPages, setHomePagePosts, setHomePageStories, setSearchPanel, setReels, setExplore],
         states: [accountPages, homePagePosts, homePageStories, searchPanel, reels, explore],
     }
-    const getKey = (index: number) => {
-        return popupStates.names[index].replace(/ /g, '-').toLowerCase();
-    }
 
     useEffect(() => {
         chrome.storage.sync.get(syncSettings => {
             const settings = {...defaultSettings, ...syncSettings};
             Object.entries(defaultSettings).forEach((entry, index) => {
-                popupStates.stateSetters.settings[key]
+                let [key] = entry;
+                popupStates.stateSetters[index](settings[key]);
             });
-            popupStates.stateSetters.forEach((setValue, index) => {
-                let key = getKey(index);
-                if (syncSettings[key]) {
-                    console.log(key, syncSettings[key]);
-                    setValue(syncSettings[key]);
-                } else {
-                    console.log(key, defaultSettings[key]);
-                    setValue(defaultSettings[key]);
-                }
-            })
         })
     }, []);
 
     const handleChange = (value: boolean, index: number) => {
         popupStates.stateSetters[index](!value);
-        chrome.storage.sync.set({ [getKey(index)]: !value });
+        let key = popupStates.names[index].replace(/ /g, '-').toLowerCase();
+        chrome.storage.sync.set({ [key]: !value });
     }
 
     return (
