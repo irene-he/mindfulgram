@@ -1,7 +1,19 @@
-Mindfulgram is a Google Chrome extension that allows you to use Instagram without certain distractions!
+# Mindfulgram 🌱 
 
-This is what the extension popup looks like:
-<img width="258" alt="Screen Shot 2025-01-11 at 3 30 22 PM" src="https://github.com/user-attachments/assets/e2aa083a-c079-4c04-ae1e-f9a222321b3f" />
+Mindfulgram is a Google Chrome extension that allows you to use Instagram without certain distractions.
 
-Here is a short demo showing what the extension can do:
-https://github.com/user-attachments/assets/6b5a2ce9-0bac-44bb-8720-b0e56c534eea
+## Features
+Ability to hide 6 key distractions:
+- Stories
+- Posts
+- Account Pages
+- Search Panel
+- Explore Page
+- Reels
+
+The popup will save your preferences!
+
+## Demo
+Here is a short video showing the extension in action:
+
+https://github.com/user-attachments/assets/097c718a-263a-40b1-afda-b335c75d0013
